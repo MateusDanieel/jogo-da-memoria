@@ -27,6 +27,7 @@ img {
             height: 200px;
             perspective: 1000px;
             margin: 10px;
+            cursor: pointer;
         
             .flip-box-inner {
                 position: relative;
@@ -37,7 +38,7 @@ img {
                 transform-style: preserve-3d;
             }
         
-            &.active {
+            &.active, &.checked {
                 .flip-box-inner {
                     transform: rotateY(180deg);
                 }

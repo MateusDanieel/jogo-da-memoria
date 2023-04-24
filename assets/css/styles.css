@@ -25,6 +25,7 @@ img {
   height: 200px;
   perspective: 1000px;
   margin: 10px;
+  cursor: pointer;
 }
 .sec-cards .wrapper .flip-box .flip-box-inner {
   position: relative;
@@ -34,7 +35,7 @@ img {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.sec-cards .wrapper .flip-box.active .flip-box-inner {
+.sec-cards .wrapper .flip-box.active .flip-box-inner, .sec-cards .wrapper .flip-box.checked .flip-box-inner {
   transform: rotateY(180deg);
 }
 .sec-cards .wrapper .flip-box .flip-box-front, .sec-cards .wrapper .flip-box .flip-box-back {
