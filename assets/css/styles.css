@@ -34,7 +34,7 @@ img {
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.sec-cards .wrapper .flip-box:hover .flip-box-inner {
+.sec-cards .wrapper .flip-box.active .flip-box-inner {
   transform: rotateY(180deg);
 }
 .sec-cards .wrapper .flip-box .flip-box-front, .sec-cards .wrapper .flip-box .flip-box-back {
