@@ -19,7 +19,7 @@
             <div class='flip-box active' data-id='${cartas[i]}'>
                 <div class='flip-box-inner'>
                     <div class='flip-box-front'>
-                        <img src='assets/img/flix-box-front-card.png' alt='' />
+                        <img src='assets/img/flip-box-front-card.png' alt='' />
                     </div>
                     
                     <div class='flip-box-back'>
@@ -37,7 +37,7 @@
             <div class='flip-box active' data-id='${cartas[i]}'>
                 <div class='flip-box-inner'>
                     <div class='flip-box-front'>
-                        <img src='assets/img/flix-box-front-card.png' alt='' />
+                        <img src='assets/img/flip-box-front-card.png' alt='' />
                     </div>
                     
                     <div class='flip-box-back'>
