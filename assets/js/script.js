@@ -61,26 +61,17 @@
         const cartas = document.querySelectorAll('.sec-cards .wrapper .flip-box');
         let cartasViradas = 0;
 
-        cartas.forEach((carta, i, arr) => {
+        cartas.forEach((carta) => {
 
             carta.addEventListener('click', () => {
 
                 if (cartasViradas < 2) {
                     carta.classList.add('active');
                     cartasViradas += 1;
-                }
+                } 
 
-                setTimeout(() => {
-                    esconderCartas();
-                    cartasViradas = 0;
-                }, 2000);
-
-                
-                
-                
-                
             });
-
+       
         });
 
     }
