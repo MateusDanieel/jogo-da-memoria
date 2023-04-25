@@ -49,38 +49,30 @@
         
     }
 
-    function esconderCartas() {
-        const cartas = document.querySelectorAll('.sec-cards .wrapper .flip-box');
-
-        cartas.forEach((carta) => {
-            carta.classList.remove('active');
-        });
-    }
-
-    function mostrarCartas() {
-        const cartas = document.querySelectorAll('.sec-cards .wrapper .flip-box');
+    function manipularCartas() {
         let cartasViradas = 0;
-
-        cartas.forEach((carta, i, arr) => {
+        const cartas = document.querySelectorAll('.sec-cards .wrapper .flip-box');
+        
+        cartas.forEach((carta, index, arr) => {
+            carta.classList.remove('active');
 
             carta.addEventListener('click', () => {
 
                 if (cartasViradas < 2) {
                     carta.classList.add('active');
                     cartasViradas += 1;
+                    
+                    setTimeout(() => {
+                        manipularCartas();
+                        cartasViradas = 0;
+                    }, 3000);
+
+
                 }
 
-                setTimeout(() => {
-                    esconderCartas();
-                    cartasViradas = 0;
-                }, 2000);
-
-                
-                
                 
                 
             });
-
         });
 
     }
@@ -88,8 +80,7 @@
     distribuirCartas();
 
     setTimeout(() => {
-        esconderCartas();
-    }, 2000);
+        manipularCartas();
+    }, 3000);
     
-    mostrarCartas();
 })();
