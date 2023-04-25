@@ -68,10 +68,18 @@
                 if (cartasViradas < 2) {
                     carta.classList.add('active');
                     cartasViradas += 1;
-                } 
 
+                    setTimeout(() => {
+                        esconderCartas();
+
+                        cartasViradas = 0;
+                    }, 3000);
+                } 
+                
             });
-       
+
+            
+
         });
 
     }
