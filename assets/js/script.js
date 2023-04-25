@@ -74,7 +74,7 @@
 
                         cartasViradas = 0;
                     }, 3000);
-                } 
+                }
                 
             });
 
@@ -88,7 +88,7 @@
 
     setTimeout(() => {
         esconderCartas();
-    }, 2000);
+    }, 3000);
     
     mostrarCartas();
 })();
