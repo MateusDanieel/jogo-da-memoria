@@ -50,7 +50,7 @@
     }
 
     function manipularCartas() {
-        let cartasViradas = 0;
+        let cartasViradas = [];
         const cartas = document.querySelectorAll('.sec-cards .wrapper .flip-box');
         
         cartas.forEach((carta, index, arr) => {
@@ -58,18 +58,25 @@
 
             carta.addEventListener('click', () => {
 
-                if (cartasViradas < 2) {
+                if (cartasViradas.length < 2 && !carta.classList.contains('active')) {
                     carta.classList.add('active');
-                    cartasViradas += 1;
-                    
-                    setTimeout(() => {
-                        manipularCartas();
-                        cartasViradas = 0;
-                    }, 3000);
 
+                    cartasViradas.push(carta.dataset.id);
 
-                }
+                    if (cartasViradas.length == 2) {
 
+                        setTimeout(() => {
+                            arr.forEach((el) => {
+                                
+                                el.classList.remove('active');
+
+                                cartasViradas = [];
+                            })
+                        }, 3000);
+                    }
+                } 
+                
+                
                 
                 
             });
