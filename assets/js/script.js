@@ -65,20 +65,31 @@
 
                     if (cartasViradas.length == 2) {
 
-                        setTimeout(() => {
-                            arr.forEach((el) => {
-                                
-                                el.classList.remove('active');
+                        if (cartasViradas[0] == carta.dataset.id) {
+                            carta.classList.add('checked');
 
-                                cartasViradas = [];
-                            })
-                        }, 3000);
+                            arr.forEach((el) => {
+                                if (el.dataset.id == cartasViradas[0]) {
+                                    el.classList.add('checked');
+                                }
+                            });
+
+                            cartasViradas = [];
+                        } else {
+                            setTimeout(() => {
+                                arr.forEach((el) => {
+                                    
+                                    el.classList.remove('active');
+    
+                                    cartasViradas = [];
+                                })
+                            }, 3000);
+                        }
+
+                        
                     }
-                } 
-                
-                
-                
-                
+                }
+                                
             });
         });
 
