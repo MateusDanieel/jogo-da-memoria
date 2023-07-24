@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    function shuffleArray(array) {
+    function embaralharCartas(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
@@ -25,9 +25,7 @@
 
         cartasId.forEach((el) => cartas.push(el));
 
-        shuffleArray(cartas);
-
-        console.log(cartas);
+        embaralharCartas(cartas);
         
         for (let i = 0; i < 32; i++) {
             container.innerHTML += 
@@ -81,7 +79,7 @@
     
                                     cartasViradas = [];
                                 })
-                            }, 3000);
+                            }, 1000);
                         }
 
                         
