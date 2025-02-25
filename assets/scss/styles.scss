@@ -13,12 +13,17 @@ img {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
 }
 
 .sec-cards {
 
     .wrapper {
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
 
         .flip-box {
@@ -28,6 +33,12 @@ img {
             perspective: 1000px;
             margin: 10px;
             cursor: pointer;
+
+            @media (max-width: 768px) {
+                width: 60px;
+                height: 85px;
+                margin: 2.5px;
+            }
         
             .flip-box-inner {
                 position: relative;
