@@ -96,5 +96,55 @@
     setTimeout(() => {
         manipularCartas();
     }, 3000);
+
+    // cronometro
+    let segundos = 0;
+    let minutos = 0;
+    let horas = 0;
+    let intervalo;
+    let melhorTempo = localStorage.getItem('melhorTempo') || null;
     
+    function atualizarCronometro() {
+        segundos++;
+        if (segundos === 60) {
+            segundos = 0;
+            minutos++;
+        }
+        if (minutos === 60) {
+            minutos = 0;
+            horas++;
+        }
+        
+        const formato = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        document.querySelector('.sec-header__cronometro').textContent = formato;
+        
+        const cartasViradas = document.querySelectorAll('.sec-cards .wrapper .flip-box.checked');
+
+        if (cartasViradas.length >= 32) {
+            pararCronometro();
+            gravarResultado();
+        }
+    }
+    
+    function pararCronometro() {
+        clearInterval(intervalo);
+    }
+    
+    function gravarResultado() {
+        const formato = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        
+        if (!melhorTempo || compararTempos(formato, melhorTempo) < 0) {
+            melhorTempo = formato;
+            localStorage.setItem('melhorTempo', melhorTempo);
+
+            document.querySelector('.sec-header__recorde').textContent = melhorTempo;
+        }
+    }
+    
+    function compararTempos(tempo1, tempo2) {
+        return tempo1.localeCompare(tempo2);
+    }
+    
+    intervalo = setInterval(atualizarCronometro, 1000);
+
 })();
