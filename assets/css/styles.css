@@ -11,6 +11,11 @@
   color-scheme: light;
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 img {
   max-width: 100%;
 }
