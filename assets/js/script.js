@@ -144,7 +144,11 @@
     function compararTempos(tempo1, tempo2) {
         return tempo1.localeCompare(tempo2);
     }
+
+    setTimeout(() => {
+        intervalo = setInterval(atualizarCronometro, 1000);
+    }, 3000);
     
-    intervalo = setInterval(atualizarCronometro, 1000);
+    
 
 })();

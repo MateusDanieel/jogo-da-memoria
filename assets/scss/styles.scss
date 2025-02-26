@@ -1,8 +1,10 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 img {
@@ -14,15 +16,31 @@ img {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
+}
 
-    @media (max-width: 768px) {
-        padding: 0;
+.sec-header {
+    font-size: 14px;
+    padding: 76px 0 20px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__cronometro {
+        opacity: .9;
+    }
+
+    &__recorde {
+        opacity: .5;
     }
 }
 
 .sec-navbar {
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -52,7 +70,6 @@ img {
 }
 
 main {
-    padding-top: 53px;
     
     .sec-cards {
 
@@ -112,12 +129,16 @@ main {
 }
 
 .sec-footer {
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0 0;
+
     &__text {
         text-align: center;
-        padding: 20px 0;
-        font-size: 14px;
+        font-size: 10px;
         color: #000;
-        opacity: .9;
+        opacity: .7;
 
         &__link {
             color: #000;
