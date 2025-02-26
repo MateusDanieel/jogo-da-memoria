@@ -1,7 +1,7 @@
 (() => {
     'use strict';
 
-    document.querySelector('.sec-header__recorde').textContent = localStorage.getItem('melhorTempo') || "99:99:99";
+    document.querySelector('.sec-header__recorde').textContent = localStorage.getItem('melhorTempo') || "00:00:00";
 
     function embaralharCartas(array) {
         for (let i = array.length - 1; i > 0; i--) {
