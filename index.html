@@ -4,12 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jogo da Memória</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css">
 </head>
 <body>
 
+    <nav class="sec-navbar">
+        <ul class="container sec-navbar__list">
+            <li class="sec-navbar__list__item">
+                <a href="https://github.com/MateusDanieel/jogo-da-memoria" class="sec-navbar__list__item__link" target="_blank" title="Ver no GitHub">
+                    <i class="fa-brands fa-github-alt fa-2x"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <main>
+
+        <header class="sec-header">
+            <div class="container">
+                <span class="sec-header__cronometro">00:00:00</span>
+                <span class="sec-header__recorde" title="Seu recorde atual">00:00:00</span>
+            </div>
+        </header>
 
         <section class="sec-cards">
             
@@ -23,6 +43,22 @@
 
     </main>
 
+    <footer class="sec-footer">
+        <div class="container">
+            <p class="sec-footer__text">Desenvolvido por <a href="https://mateusdanieel.github.io/" target="_blank" class="sec-footer__text__link">Mateus Daniel</a>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <div class="modal__content">
+            <h2 class="modal__content__title">Parabéns!</h2>
+            <p class="modal__content__text">Você completou o jogo em <span class="modal__content__text__time">00:00:00</span></p>
+            <a href="#" target="_blank" class="modal__content__button__share">Desafiar Amigos</a>
+            <a href="./" class="modal__content__button__refresh">Jogar Novamente</a>
+        </div>
+    </div>
+
+    <script src="assets/js/fa.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>
