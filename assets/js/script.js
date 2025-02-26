@@ -1,6 +1,8 @@
 (() => {
     'use strict';
 
+    document.querySelector('.sec-header__recorde').textContent = localStorage.getItem('melhorTempo') || "99:99:99";
+
     function embaralharCartas(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -102,7 +104,7 @@
     let minutos = 0;
     let horas = 0;
     let intervalo;
-    let melhorTempo = localStorage.getItem('melhorTempo') || null;
+    let melhorTempo = localStorage.getItem('melhorTempo') || "99:99:99";
     
     function atualizarCronometro() {
         segundos++;
@@ -134,7 +136,7 @@
     function gravarResultado() {
         const formato = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
         
-        if (melhorTempo !== "00:00:00" && (!melhorTempo || compararTempos(formato, melhorTempo) < 0)) {
+        if (melhorTempo !== "00:00:00" && compararTempos(formato, melhorTempo) < 0) {
             melhorTempo = formato;
             localStorage.setItem('melhorTempo', melhorTempo);
 
