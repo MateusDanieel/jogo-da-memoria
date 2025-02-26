@@ -123,6 +123,7 @@
         if (cartasViradas.length >= 32) {
             pararCronometro();
             gravarResultado();
+            abrirModal();
         }
     }
     
@@ -133,14 +134,25 @@
     function gravarResultado() {
         const formato = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
         
-        if (!melhorTempo || compararTempos(formato, melhorTempo) < 0) {
+        if (melhorTempo !== "00:00:00" && (!melhorTempo || compararTempos(formato, melhorTempo) < 0)) {
             melhorTempo = formato;
             localStorage.setItem('melhorTempo', melhorTempo);
 
             document.querySelector('.sec-header__recorde').textContent = melhorTempo;
         }
     }
-    
+
+    function abrirModal() {
+        const formato = `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        const mensagem = `Completei o jogo da memória em ${formato}! Jogue você também!`;
+        const url = "https://mateusdanieel.github.io/jogo-da-memoria/";
+        const link = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem + " " + url)}`;
+        
+        document.querySelector('.modal').classList.add('active');
+        document.querySelector('.modal__content__text__time').textContent = formato;
+        document.querySelector('.modal__content__button__share').setAttribute('href', link);
+    }
+
     function compararTempos(tempo1, tempo2) {
         return tempo1.localeCompare(tempo2);
     }
@@ -149,6 +161,4 @@
         intervalo = setInterval(atualizarCronometro, 1000);
     }, 3000);
     
-    
-
 })();
